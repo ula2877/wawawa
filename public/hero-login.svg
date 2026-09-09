@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="bubble1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="bubble2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="150" cy="200" r="180" fill="#22c55e" opacity="0.06"/>
+  <circle cx="700" cy="800" r="220" fill="#22c55e" opacity="0.05"/>
+  <circle cx="650" cy="150" r="100" fill="#16a34a" opacity="0.04"/>
+
+  <!-- Floating message bubbles (background) -->
+  <!-- Bubble 1 - top right -->
+  <g transform="translate(520, 120) rotate(12)" opacity="0.35">
+    <rect x="0" y="0" width="160" height="52" rx="16" fill="#334155"/>
+    <circle cx="22" cy="26" r="14" fill="#475569"/>
+    <rect x="44" y="14" width="90" height="8" rx="4" fill="#475569"/>
+    <rect x="44" y="28" width="60" height="6" rx="3" fill="#334155"/>
+  </g>
+
+  <!-- Bubble 2 - left middle -->
+  <g transform="translate(60, 350) rotate(-8)" opacity="0.3">
+    <rect x="0" y="0" width="180" height="52" rx="16" fill="#334155"/>
+    <circle cx="22" cy="26" r="14" fill="#475569"/>
+    <rect x="44" y="14" width="100" height="8" rx="4" fill="#475569"/>
+    <rect x="44" y="28" width="70" height="6" rx="3" fill="#334155"/>
+  </g>
+
+  <!-- Bubble 3 - bottom -->
+  <g transform="translate(480, 750) rotate(6)" opacity="0.25">
+    <rect x="0" y="0" width="200" height="52" rx="16" fill="#334155"/>
+    <circle cx="22" cy="26" r="14" fill="#475569"/>
+    <rect x="44" y="14" width="110" height="8" rx="4" fill="#475569"/>
+    <rect x="44" y="28" width="80" height="6" rx="3" fill="#334155"/>
+  </g>
+
+  <!-- Central phone mockup -->
+  <g filter="url(#shadow)">
+    <!-- Phone body -->
+    <rect x="280" y="160" width="240" height="480" rx="28" fill="url(#phone)" stroke="#334155" stroke-width="1.5"/>
+    <!-- Screen -->
+    <rect x="292" y="192" width="216" height="416" rx="8" fill="#0f172a"/>
+    <!-- Status bar -->
+    <rect x="352" y="172" width="96" height="12" rx="6" fill="#1e293b"/>
+
+    <!-- Chat header -->
+    <rect x="292" y="192" width="216" height="52" rx="0" fill="#1e293b"/>
+    <circle cx="318" cy="218" r="14" fill="#22c55e"/>
+    <text x="318" y="222" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">W</text>
+    <rect x="340" y="208" width="80" height="8" rx="4" fill="#334155"/>
+    <rect x="340" y="222" width="50" height="5" rx="2.5" fill="#475569"/>
+
+    <!-- Chat messages -->
+    <!-- Incoming message -->
+    <rect x="304" y="260" width="140" height="36" rx="12" fill="#1e293b"/>
+    <rect x="314" y="268" width="80" height="6" rx="3" fill="#334155"/>
+    <rect x="314" y="280" width="55" height="5" rx="2.5" fill="#2a3a50"/>
+    <rect x="314" y="290" width="35" height="4" rx="2" fill="#2a3a50"/>
+
+    <!-- Outgoing message (green) -->
+    <rect x="352" y="310" width="144" height="36" rx="12" fill="url(#bubble1)"/>
+    <rect x="364" y="318" width="90" height="6" rx="3" fill="#4ade80" opacity="0.7"/>
+    <rect x="364" y="330" width="65" height="5" rx="2.5" fill="#4ade80" opacity="0.5"/>
+
+    <!-- Another incoming -->
+    <rect x="304" y="362" width="160" height="36" rx="12" fill="#1e293b"/>
+    <rect x="314" y="370" width="100" height="6" rx="3" fill="#334155"/>
+    <rect x="314" y="382" width="70" height="5" rx="2.5" fill="#2a3a50"/>
+
+    <!-- Another outgoing -->
+    <rect x="372" y="412" width="124" height="36" rx="12" fill="url(#bubble1)"/>
+    <rect x="384" y="420" width="75" height="6" rx="3" fill="#4ade80" opacity="0.7"/>
+    <rect x="384" y="432" width="50" height="5" rx="2.5" fill="#4ade80" opacity="0.5"/>
+
+    <!-- Broadcast indicator -->
+    <rect x="304" y="468" width="176" height="32" rx="10" fill="#166534" opacity="0.6"/>
+    <rect x="316" y="478" width="120" height="6" rx="3" fill="#22c55e" opacity="0.6"/>
+    <rect x="316" y="488" width="80" height="4" rx="2" fill="#22c55e" opacity="0.4"/>
+
+    <!-- Another message -->
+    <rect x="304" y="512" width="130" height="32" rx="10" fill="#1e293b"/>
+    <rect x="314" y="520" width="80" height="6" rx="3" fill="#334155"/>
+    <rect x="314" y="530" width="55" height="4" rx="2" fill="#2a3a50"/>
+  </g>
+
+  <!-- Floating WhatsApp icons -->
+  <!-- Top left -->
+  <g transform="translate(100, 80)" opacity="0.2">
+    <rect x="0" y="0" width="48" height="48" rx="12" fill="#22c55e"/>
+    <path d="M24 12c-6.63 0-12 5.37-12 12 0 2.11.55 4.09 1.51 5.81L12 36l6.41-1.67c1.68.92 3.58 1.44 5.59 1.44 6.63 0 12-5.37 12-12S30.63 12 24 12zm0 21.6c-1.78 0-3.44-.47-4.88-1.3l-.35-.21-3.81.99.99-3.81-.21-.35A9.56 9.56 0 0114.4 24c0-5.3 4.3-9.6 9.6-9.6s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6z" fill="white"/>
+  </g>
+
+  <!-- Bottom right -->
+  <g transform="translate(600, 820)" opacity="0.15">
+    <rect x="0" y="0" width="40" height="40" rx="10" fill="#22c55e"/>
+    <path d="M20 10c-5.52 0-10 4.48-10 10 0 1.76.46 3.41 1.26 4.84l-1.26 3.8 3.8-1.26A9.9 9.9 0 0020 30c5.52 0 10-4.48 10-10S25.52 10 20 10zm0 18c-1.48 0-2.87-.39-4.07-1.08l-.29-.18-3.17.82.82-3.17-.18-.29A7.97 7.97 0 0112 20c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z" fill="white"/>
+  </g>
+
+  <!-- Sparkle dots -->
+  <circle cx="200" cy="500" r="3" fill="#22c55e" opacity="0.4"/>
+  <circle cx="600" cy="300" r="2.5" fill="#22c55e" opacity="0.3"/>
+  <circle cx="120" cy="700" r="2" fill="#4ade80" opacity="0.25"/>
+  <circle cx="680" cy="500" r="3" fill="#22c55e" opacity="0.2"/>
+  <circle cx="350" cy="80" r="2" fill="#4ade80" opacity="0.3"/>
+</svg>

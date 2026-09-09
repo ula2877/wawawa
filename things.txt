@@ -1,0 +1,2 @@
+- Super Admin — superadmin@example.com / password
+- Admin — admin@example.com / password
