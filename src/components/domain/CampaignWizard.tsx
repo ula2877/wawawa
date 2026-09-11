@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Calendar, Clock, Globe2,
@@ -168,8 +168,23 @@ export function CampaignWizard({ initial }: CampaignWizardProps) {
     setStep((s) => Math.max(s - 1, 0));
   };
 
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
   const insertVariable = (v: string) => {
-    setMessage((m) => m + v);
+    const el = messageRef.current;
+    if (el) {
+      const start = el.selectionStart ?? message.length;
+      const end = el.selectionEnd ?? message.length;
+      const next = message.slice(0, start) + v + message.slice(end);
+      setMessage(next);
+      const caret = start + v.length;
+      requestAnimationFrame(() => {
+        el.focus();
+        el.setSelectionRange(caret, caret);
+      });
+    } else {
+      setMessage((m) => m + v);
+    }
   };
 
   const submit = async (kind: 'draft' | 'schedule' | 'now') => {
@@ -370,6 +385,7 @@ export function CampaignWizard({ initial }: CampaignWizardProps) {
         placeholder={isEdit ? 'Use custom message' : 'Select a template...'}
       />
       <Textarea
+        ref={messageRef}
         label="Message body"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
